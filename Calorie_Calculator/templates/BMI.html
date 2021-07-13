@@ -1,159 +1,19 @@
 {% load static%}
-
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cal-culator</TITLE>
-        
-        
+        <title>Cal-culator</title>
 		<link rel="stylesheet" href="{% static 'css\BMI.css'%}" />
 		<link rel="stylesheet" href="{% static 'css\index.css'%}" />
-		
-		<style media="screen">
-
-	 
-	 
-	 
-	 body{
-		 margin: 0;
-		 padding: 0;
-		 text-align: center;
-		 font-family: sans-serif;
-		 /* background-image: linear-gradient(120deg,#ff6b6b, #5f27cd); */
-		 background-image: url("https://images.unsplash.com/photo-1535663056733-99fe376422cf?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=2500&ixid=MnwxfDB8MXxyYW5kb218MHx8LGZydWl0c3x8fHx8fDE2MjYwMjM3NzY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600");
-		 /* background: linear-gradient(#02aab0,#46DC85); */
-		 min-height: 350vh;
-		}
-		div{
-			width: 500px;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			background-color: #fff;
-			transform: translate(-50%, -50%);
-			padding: 20px;
-			border-radius: 10px;
-			box-shadow: 1px 1px 20px #ee5253;
-		}
-		h2{
-			font-size: 30px;
-			font-weight: 600;
-		}
-		.text{
-			text-align: left;
-			margin-left: 150px;
-		}
-		#w, #h{
-			color: #222f3e;
-			text-align: left;
-			font-size: 20px;
-			font-weight: 200;
-			outline: none;
-			border: none;
-			background: none;
-			border-bottom: 1px solid #341f97;
-			width: 200px;
-		}
-		#w:focus, #h:focus{
-			border-bottom: 2px solid #341f97;
-			width: 300px;
-			transition: 0.5s;
-		}
-		#result{
-			color: #341f97;
-		}
-		#btn{
-			font-family: inherit;
-			margin-top: 10px;
-			border: none;
-			color: #fff;
-			background-image: linear-gradient(120deg,#ff6b6b, #9a96a1);
-			
-			/* background: linear-gradient(#02aab0,#46DC85); */
-			width: 150px;
-			padding: 10px;
-			border-radius: 30px;
-			outline: none;
-			cursor: pointer;
-		}
-		#btn:hover{
-			box-shadow: 1px 1px 10px #341f97;
-		}
-		#info{
-			font-size: 12px;
-			font-family: inherit;
-		}
-		</style>
-	<script type="text/javascript">
-		function BMI() {
-			var h=document.getElementById('h').value;
-			var w=document.getElementById('w').value;
-			var bmi=w/(h/100*h/100);
-			var bmio=(bmi.toFixed(2));
-
-			document.getElementById("result").innerHTML="Your BMI is " + bmio;
-		}
-	</script>
-	
-		<style>
-			/* Style The Dropdown Button */
-			.dropbtn {
-				background-color: #4CAF50;
-				color: white;
-				padding: 16px;
-				font-size: 16px;
-				border: none;
-				cursor: pointer;
-			}
-			
-			/* The container <div> - needed to position the dropdown content */
-				.dropdown {
-					position: relative;
-					display: inline-block;
-				}
-				
-				/* Dropdown Content (Hidden by Default) */
-				.dropdown-content {
-					display: none;
-					position: absolute;
-					background-color: #f9f9f9;
-					min-width: 160px;
-					box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-					z-index: 1;
-				}
-				
-				/* Links inside the dropdown */
-				.dropdown-content a {
-					color: black;
-					padding: 12px 16px;
-					text-decoration: none;
-					display: block;
-				}
-				
-				/* Change color of dropdown links on hover */
-				.dropdown-content a:hover {background-color: #f1f1f1}
-				
-				/* Show the dropdown menu on hover */
-				.dropdown:hover .dropdown-content {
-					display: block;
-				}
-				
-				/* Change the background color of the dropdown button when the dropdown content is shown */
-				.dropdown:hover .dropbtn {
-					background-color: #3e8e41;
-				}
-				</style>
-				</head>
+	</head>
 <body>
 	<header><img src="{% static 'img\logo_white.png'%}" width="150" height="150"></img>
 		<ul>
 			<li><a href="{% url 'index' %}" >Home</a></li>
-			<li><a href="{% url 'Measure' %}" >Measure</a></li>
-			<li><a href="{% url 'Account' %}" class="active" >Account</a></li>
-		</ul>
-		
+			<li><a href="{% url 'Measure' %}" class="active" >Measure</a></li>
+			<li><a href="{% url 'Account' %}">Account</a></li>
+		</ul>	
   </header>
-
 <div>
 	<h2>BMI Calculator</h2>
 	<p class="text">Height</p>
@@ -164,11 +24,7 @@
 	<button id="btn" onClick="BMI()">Calculate</button>
 	<p id="info">Please enter height [cm] and weight [kg]</p>
 </div>
-
 <br><br>
-
-
-
 <div class = "info_BMI" > <P>Body Mass Index (BMI) is a person’s weight in kilograms divided by the square of height in meters. A high BMI can indicate high body fatness. BMI screens for weight categories that may lead to health problems, but it does not diagnose the body fatness or health of an individual.
 	BMI does not measure body fat directly, but BMI is moderately correlated with more direct measures of body fat 1,2,3. Furthermore, BMI appears to be as strongly correlated with various metabolic and disease outcome as are these more direct measures of body fatness
 </P> 
@@ -208,13 +64,16 @@
 	●	At the same BMI, older people, on average, tend to have more body fat than younger adults. <br>
 	●	At the same BMI, athletes have less body fat than do non-athletes.
 </p>
-
 </div>
-
-
-
+<script type="text/javascript">
+	function BMI() {
+		var h=document.getElementById('h').value;
+		var w=document.getElementById('w').value;
+		var bmi=w/(h/100*h/100);
+		var bmio=(bmi.toFixed(2));
+		document.getElementById("result").innerHTML="Your BMI is " + bmio;
+	}
+</script>
 </body>
-
-
 </html>
 

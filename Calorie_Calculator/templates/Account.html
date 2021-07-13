@@ -2,14 +2,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cal-culator</TITLE>
+        <title>Cal-culator</title>
         <link rel="stylesheet" href="{% static 'css\account.css'%}">
         <link rel="stylesheet" href="{% static 'css\index.css'%}" />
-
     </head>
-   
-    
-    
     <body>
    <header><img src="{% static 'img\logo_white.png'%}" width="150" height="150"></img>
        <ul>
@@ -17,20 +13,17 @@
            <li><a href="{% url 'Measure' %}" >Measure</a></li>
            <li><a href="{% url 'Account' %}" class="active" >Account</a></li>
        </ul>
-       
 </header>
         <div class="container">
           <input type="checkbox" id="flip">
           <div class="cover">
             <div class="front">
-              <!--<img src="images/frontImg.jpg" alt="">-->
               <div class="text">
                 <span class="text-1">Every new friend is a <br> new adventure</span>
                 <span class="text-2">Let's get connected</span>
               </div>
             </div>
             <div class="back">
-              <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
               <div class="text">
                 <span class="text-1">Complete miles of journey <br> with one step</span>
                 <span class="text-2">Let's get started</span>
@@ -82,7 +75,4 @@
           </form>
         </div>
       </body>
-
-
-
 </html>

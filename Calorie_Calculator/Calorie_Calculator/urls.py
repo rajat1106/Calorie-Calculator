@@ -25,5 +25,5 @@ urlpatterns = [
     path('/accounts',views.account,name='Account'),
     path('/accounts/bmi',views.bmi,name='BMI'),
     path('/accounts/bmr',views.bmr,name='BMR'),
-    # path('/accounts',views.account,name='Account'),
+    
 ]

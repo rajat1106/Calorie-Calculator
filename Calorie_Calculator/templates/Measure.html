@@ -3,77 +3,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cal-culator</TITLE>
+        <title>Cal-culator</title>
           <link rel="stylesheet" href="{% static 'css\index.css'%}" />
-        
+          <link rel="stylesheet" href="{% static 'css\Measure.css'%}" />
     </head>
-    <header><img src="{% static 'img\logo_white.png'%}" width="150" height="150"></img>
+    <header>
+      <img src="{% static 'img\logo_white.png'%}" width="150" height="150"></img>
       <ul>
           <li><a href="{% url 'index' %}" >Home</a></li>
-          <li><a href="{% url 'Measure' %}" >Measure</a></li>
-          <li><a href="{% url 'Account' %}" class="active" >Account</a></li>
+          <li><a href="{% url 'Measure' %}" class="active" >Measure</a></li>
+          <li><a href="{% url 'Account' %}"  >Account</a></li>
       </ul>
-      
-</header>
-
-     
-    </body>
-
-
+    </header>
     <body>
-        <style>
-            /* Style The Dropdown Button */
-            .dropbtn {
-              background-color: #4CAF50;
-              color: rgb(0, 0, 0);
-              padding: 16px;
-              font-size: 16px;
-              border: none;
-              border-radius: 30px;
-              cursor: pointer;
-            }
-            
-            /* The container <div> - needed to position the dropdown content */
-            .dropdown {
-              position: relative;
-              top: 300px;
-              left: 650px;
-              
-              display: inline-block;
-            }
-            
-            /* Dropdown Content (Hidden by Default) */
-            .dropdown-content {
-              display: none;
-              position: absolute;
-              background-color: #f9f9f9;
-              min-width: 160px;
-              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-              z-index: 1;
-            }
-            
-            /* Links inside the dropdown */
-            .dropdown-content a {
-              color: black;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-            }
-            
-            /* Change color of dropdown links on hover */
-            .dropdown-content a:hover {background-color: #f1f1f1}
-            
-            /* Show the dropdown menu on hover */
-            .dropdown:hover .dropdown-content {
-              display: block;
-            }
-            
-            /* Change the background color of the dropdown button when the dropdown content is shown */
-            .dropdown:hover .dropbtn {
-              background-color: #ffffff;
-            }
-            </style>
-            
             <div class="dropdown">
               <button class="dropbtn">Select your choice</button>
               <div class="dropdown-content">
