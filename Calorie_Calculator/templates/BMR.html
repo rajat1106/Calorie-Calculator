@@ -1,0 +1,251 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cal-culator</TITLE>
+			<link rel="stylesheet" href="{% static 'css\BMI.css'%}" />
+			<link rel="stylesheet" href="{% static 'css\index.css'%}" />
+	<style media="screen">
+		body{
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			font-family: sans-serif;
+			/* background-image: linear-gradient(120deg,#ff6b6b, #5f27cd); */
+			background-image: url("https://images.unsplash.com/photo-1535663056733-99fe376422cf?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=4000&ixid=MnwxfDB8MXxyYW5kb218MHx8LGZydWl0c3x8fHx8fDE2MjYwMjM3NzY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600");
+            /* background: linear-gradient(#02aab0,#46DC85); */
+			min-height: 400vh;
+		}
+		div{
+			width: 500px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			background-color: #fff;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 1px 1px 20px #ee5253;
+		}
+		h2{
+			font-size: 30px;
+			font-weight: 600;
+		}
+		.text{
+			text-align: left;
+			margin-left: 150px;
+		}
+		#w, #h{
+			color: #222f3e;
+			text-align: left;
+			font-size: 20px;
+			font-weight: 200;
+			outline: none;
+			border: none;
+			background: none;
+			border-bottom: 1px solid #341f97;
+			width: 200px;
+		}
+			#w:focus, #h:focus{
+				border-bottom: 2px solid #341f97;
+				width: 300px;
+				transition: 0.5s;
+			}
+			#result{
+				color: #341f97;
+			}
+			#btn{
+				font-family: inherit;
+				margin-top: 10px;
+				border: none;
+				color: #fff;
+				background-image: linear-gradient(120deg,#ff6b6b, #9a96a1);
+				
+                /* background: linear-gradient(#02aab0,#46DC85); */
+				width: 150px;
+				padding: 10px;
+				border-radius: 30px;
+				outline: none;
+				cursor: pointer;
+			}
+			#btn:hover{
+				box-shadow: 1px 1px 10px #341f97;
+			}
+			#info{
+				font-size: 12px;
+				font-family: inherit;
+			}
+	</style>
+	<script type="text/javascript">
+		function BMI() {
+			var h=document.getElementById('h').value;
+			var w=document.getElementById('w').value;
+			var bmi=w/(h/100*h/100);
+			var bmio=(bmi.toFixed(2));
+
+			document.getElementById("result").innerHTML="Your BMI is " + bmio;
+		}
+	</script>
+		<style>
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+
+
+.info_BMR{
+
+	position: relative;
+	text-align: justify;
+    top: 1800px;
+    width: 1000px;
+    font-size: 20px;
+}
+</style>
+</head>
+<body>
+<header><img src="{% static 'img\logo_white.png'%}" width="150" height="150"></img>
+	<ul>
+		<li><a href="{% url 'index' %}" >Home</a></li>
+		<li><a href="{% url 'Measure' %}" >Measure</a></li>
+		<li><a href="{% url 'Account' %}" class="active" >Account</a></li>
+	</ul>
+	
+</header>
+
+<div>
+	<h2>BMR Calculator</h2>
+	<p class="text">Height</p>
+	<input type="text" id="h">
+	<p class="text">Weight</p>
+	<input type="text" id="w">
+	<p id="result"></p>
+	<button id="btn" onClick="BMI()">Calculate</button>
+	<p id="info">Please enter height [cm] and weight [kg]</p>
+</div>
+
+
+
+		<div class = "info_BMR" >
+			
+			<h2>Basal metabolic rate 
+			</h2>
+			<br>
+			<p>Even when resting, your body burns calories by performing basic functions to sustain life, such as: <br>
+				breathing  <br>
+				circulation  <br>
+				nutrient processing <br>
+				cell production  <br>
+				</p>
+			<br>
+			
+			<p>Basal metabolic rate is the number of calories your body needs to accomplish its most basic (basal) life-sustaining functions.
+			</p>
+			<br>
+			
+			<h2>Basal metabolic rate vs. resting metabolic rate
+			</h2>
+			<br>
+			<p>Basal metabolic rate (BMR) is often used interchangeably with resting metabolic rate (RMR). While BMR is a minimum number of calories required for basic functions at rest, RMR — also called resting energy expenditure (REE) — is the number of calories that your body burns while it’s at rest. <br>
+				Although BMR and RMR slightly differ from each other, your RMR should be an accurate estimate of your BMR.
+				</p>
+			<br>
+			<h2>How to estimate your BMR 
+			</h2>
+			<br>
+			<p>One popular way to estimate BMR is through the Harris-Benedict formula, which takes into account weight, height, age, and gender.  <br>
+				Women:  <br>
+				BMR = 655 + (9.6 × weight in kg) + (1.8 × height in cm) – (4.7 × age in years)  <br>
+				Men:  <br>
+				BMR = 66 + (13.7 × weight in kg) + (5 × height in cm) – (6.8 × age in years)
+				</p>
+			<br>
+			<p>  <h2> Why you might want to know your BMR  </h2>  <br> 
+				Your BMR can be used to help you gain, lose, or maintain your weight. By knowing how many calories you burn, you can know how many to consume. To put it simply: <br>
+				Is your goal to maintain your weight? Consume the same number of calories that you burn. <br>
+				Is your goal to gain weight? Consume more calories than you burn. <br>
+				Is your goal to lose weight? Consume fewer calories than you burn  <br>
+				</p>
+
+				<p> <h2> How many calories you need everyday  </h2> <br>
+					If you’ve estimated your BMR using the Harris-Benedict formula, your next step is to include the number of calories you burn during daily activities based on your lifestyle: <br>
+					Sedentary. If you get minimal or no exercise, multiply your BMR by 1.2.    <br>
+					Lightly active. If you exercise lightly one to three days a week, multiply your BMR by 1.375.   <br>
+					Moderately active. If you exercise moderately three to five days a week, multiply your BMR by 1.55.   <br>
+					Very active. If you engage in hard exercise six to seven days a week, multiply your BMR by 1.725.   <br>
+					Extra active. If you engage in very hard exercise six to seven days a week or have a physical job, multiply your BMR by 1.9.   <br>
+					The final number is approximately how many calories you need on a daily basis to maintain your weight.    <br>
+					Of course, this is an estimate. According to a 2007 study    <br>
+					Trusted Source    <br>
+					, the formula would be more accurate if it included body composition, weight history, and other factors that have been shown to affect BMR.    <br>
+					  <h2> How you can change your BMR   </h2>      <br>
+					Your BMR is determined by a number of factors, including:    <br>
+					⦿ sex    <br>
+					⦿ weight    <br>
+					⦿ height    <br>
+					⦿ age    <br>
+					⦿ ethnicity    <br>
+					⦿ weight history    <br>
+					⦿ body composition    <br>
+					⦿ genetic factors    <br>
+					Of these factors, you can take steps to change your weight and body composition. So if you want to change your BMR, your first steps should be to lose weight and increase muscle.   <br>
+					A 2010 review   <br>
+					Trusted Source   <br>
+					 indicated that resistance training can improve lean body mass composition and maintain fat mass reduction, increasing BMR.   <br>
+					 <h2> Takeaway </h2>   <br>
+					Understanding your BMR, your typical activity level, and the amount of calories you need daily to maintain your weight are important ways for you to actively participate in your physical health.   <br>
+					Whether you need to gain weight, maintain your current weight, or lose weight, calculating your BMR is a good place to start.   <br>
+					</p>
+
+		</div>
+	</body>
+
+
+</html>
+
+</html>

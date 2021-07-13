@@ -20,5 +20,10 @@ from Calculators import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index,name='index')
+    path('',views.index,name='index'),
+    path('/measure',views.measure,name='Measure'),
+    path('/accounts',views.account,name='Account'),
+    path('/accounts/bmi',views.bmi,name='BMI'),
+    path('/accounts/bmr',views.bmr,name='BMR'),
+    # path('/accounts',views.account,name='Account'),
 ]

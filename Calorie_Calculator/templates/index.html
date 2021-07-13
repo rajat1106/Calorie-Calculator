@@ -1,12 +1,84 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calorie Calculator</title>
-</head>
-<body>
-    <h1>Welcome to Calorie Calculator</h1>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cal-culator</TITLE>
+        <link rel="stylesheet" href="{% static 'css\index.css'%}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+        <header><img src="{% static 'img\logo_white.png'%}" width="150" height="150"></img>
+            <ul>
+                <li><a href="{% url 'index' %}" class="active" >Home</a></li>
+                <li><a href="{% url 'Measure' %}" >Measure</a></li>
+                <li><a href="{% url 'Account' %}" >Account</a></li>
+            </ul>
+            
+     </header>
+     </div>
+    </body>
+
+
+
+
+
+    <body>
+        <div class="container_1">
+            <!-- <img src="img_snow_wide.jpg" alt="Snow" style="width:100%;"> -->
+            <img src="https://images.unsplash.com/photo-1535663056733-99fe376422cf?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8LGZydWl0c3x8fHx8fDE2MjYwMjM3NzY&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" alt=""  style="width: 100%;">
+            
+            <div class="centered_1"><div class="para1">  <h1> Health Lifestyle   </h1>  <br>
+
+                <b> Good nutrition, daily exercise and adequate sleep are the foundations of healthy living. A healthy lifestyle keeps you fit, energetic and at reduced risk for disease. According to WHO, Healthy living is a way of living that helps you enjoy more aspects of your life. It is a way of living that lowers the risk of being seriously ill or dying early. Health is not just about avoiding a disease or illness. It is about physical, mental and social well-being too.   <br>
+                 
+                 When you adopt a healthy lifestyle, you provide a more positive role model for other people in your family, particularly children. You will also create a better environment for them to grow up in. By helping them to follow a healthier lifestyle, you will be contributing to their wellbeing and enjoyment of life now and in the future.   <br>
+                 
+                  Managing stress in positive ways, instead of through smoking or drinking alcohol, reduces wear and tear on your body at the molecular level. For a longer and more comfortable life, you should adopt a healthy life style.  </b> 
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+             </div></div>
+          </div>
+
+
+
+
+          <div class="container_2">
+            <!-- <img src="img_snow_wide.jpg" alt="Snow" style="width:100%;"> -->
+            <img src="https://images.unsplash.com/photo-1497587285970-432d79cee5f3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8LGZydWl0c3x8fHx8fDE2MjYxMTA4OTk&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600">
+            
+            <div class="centered_2"><div class = "para2">  <h1> What are the benefits of a healthy diet?  </h1>
+                <b> A healthy diet may help to prevent certain serious diseases such as heart disease, stroke and type 2 diabetes. It may also help to reduce your risk of developing some cancers. If you become sick, eating a healthy diet may help you to recover more quickly. Also, a main way of preventing obesity and overweight is to eat a healthy diet. If you are overweight or obese, eating a healthy diet can help you lose weight.
+               
+               As well as healthy eating, regular physical exercise is also very important for health and to avoid or reduce obesity. See also the separate leaflet called Exercise and Physical Activity. </b> </div></div>
+          </div>
+
+
+
+
+          <div class="container_3">
+            <!-- <img src="img_snow_wide.jpg" alt="Snow" style="width:100%;"> -->
+            <img src="https://images.unsplash.com/photo-1524603541582-4bc77fd0a9d9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8LGZydWl0c3x8fHx8fDE2MjYxMTA4NTE&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600">
+            
+            <div class="centered_3"><div class="para3"> <h1> Why a balanced diet is important? </h1>  <br>
+                <b>  A balanced diet supplies the nutrients your body needs to work effectively. Without balanced nutrition, your body is more prone to disease, infection, fatigue, and low performance.
+                
+                Children who don’t get enough healthy foods may face growth and developmental problems, poor academic performance, and frequent infections.
+                
+                They can also develop unhealthy eating habits that may persist into adulthood.
+                
+                Without exercise, they’ll also have a higher risk of obesity and various diseases that make up metabolic syndrome, such as type 2 diabetes and high blood pressure. </b>
+                
+                
+               
+            </div></div>
+          </div>
+
+    </body>
 </html>
