@@ -23,7 +23,9 @@ urlpatterns = [
     path('',views.index,name='index'),
     path('/measure',views.measure,name='Measure'),
     path('/accounts',views.account,name='Account'),
-    path('/accounts/bmi',views.bmi,name='BMI'),
-    path('/accounts/bmr',views.bmr,name='BMR'),
+    path('/measure/bmi',views.bmi,name='BMI'),
+    path('/measure/bmr',views.bmr,name='BMR'),
+    path('/measure/bodyfat',views.bodyfat,name='bodyfat'),
+    path('/measure/calorie',views.calorie,name='calorie'),
     
 ]

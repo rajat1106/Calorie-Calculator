@@ -14,3 +14,9 @@ def bmi(request):
 
 def bmr(request):
     return render(request,'BMR.html')
+
+def bodyfat(request):
+    return render(request,'bodyfat.html')
+
+def calorie(request):
+    return render(request,'calorie.html')
