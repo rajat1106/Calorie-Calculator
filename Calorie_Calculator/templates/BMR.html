@@ -1,118 +1,43 @@
 {% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Cal-culator</TITLE>
-			<link rel="stylesheet" href="{% static 'css\BMR.css'%}" />
-			<link rel="stylesheet" href="{% static 'css\index.css'%}" />
-	</head>
-<body>
-<header><img src="{% static 'img\logo_white.png'%}" width="150" height="150"></img>
-	<ul>
-		<li><a href="{% url 'index' %}" >Home</a></li>
-		<li><a href="{% url 'Measure' %}" class="active" >Measure</a></li>
-		<li><a href="{% url 'Account' %}" >Account</a></li>
-	</ul>
-</header>
-<div>
-	<h2>BMR Calculator</h2>
-	<p class="text">Height</p>
-	<input type="text" id="h">
-	<p class="text">Weight</p>
-	<input type="text" id="w">
-	<p class="text">Age</p>
-	<input type="text" id="a">
-	<p id="result"></p>
-	<button id="btn" onClick="BMR()">Calculate</button>
-	<p id="info">Please enter height [cm] and weight [kg]</p>
-</div>
-<div class = "info_BMR" >
-			
-			<h2>Basal metabolic rate 
-			</h2>
-			<br>
-			<p>Even when resting, your body burns calories by performing basic functions to sustain life, such as: <br>
-				breathing  <br>
-				circulation  <br>
-				nutrient processing <br>
-				cell production  <br>
-				</p>
-			<br>
-			
-			<p>Basal metabolic rate is the number of calories your body needs to accomplish its most basic (basal) life-sustaining functions.
-			</p>
-			<br>
-			
-			<h2>Basal metabolic rate vs. resting metabolic rate
-			</h2>
-			<br>
-			<p>Basal metabolic rate (BMR) is often used interchangeably with resting metabolic rate (RMR). While BMR is a minimum number of calories required for basic functions at rest, RMR — also called resting energy expenditure (REE) — is the number of calories that your body burns while it’s at rest. <br>
-				Although BMR and RMR slightly differ from each other, your RMR should be an accurate estimate of your BMR.
-				</p>
-			<br>
-			<h2>How to estimate your BMR 
-			</h2>
-			<br>
-			<p>One popular way to estimate BMR is through the Harris-Benedict formula, which takes into account weight, height, age, and gender.  <br>
-				Women:  <br>
-				BMR = 655 + (9.6 × weight in kg) + (1.8 × height in cm) – (4.7 × age in years)  <br>
-				Men:  <br>
-				BMR = 66 + (13.7 × weight in kg) + (5 × height in cm) – (6.8 × age in years)
-				</p>
-			<br>
-			<p>  <h2> Why you might want to know your BMR  </h2>  <br> 
-				Your BMR can be used to help you gain, lose, or maintain your weight. By knowing how many calories you burn, you can know how many to consume. To put it simply: <br>
-				Is your goal to maintain your weight? Consume the same number of calories that you burn. <br>
-				Is your goal to gain weight? Consume more calories than you burn. <br>
-				Is your goal to lose weight? Consume fewer calories than you burn  <br>
-				</p>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-				<p> <h2> How many calories you need everyday  </h2> <br>
-					If you’ve estimated your BMR using the Harris-Benedict formula, your next step is to include the number of calories you burn during daily activities based on your lifestyle: <br>
-					Sedentary. If you get minimal or no exercise, multiply your BMR by 1.2.    <br>
-					Lightly active. If you exercise lightly one to three days a week, multiply your BMR by 1.375.   <br>
-					Moderately active. If you exercise moderately three to five days a week, multiply your BMR by 1.55.   <br>
-					Very active. If you engage in hard exercise six to seven days a week, multiply your BMR by 1.725.   <br>
-					Extra active. If you engage in very hard exercise six to seven days a week or have a physical job, multiply your BMR by 1.9.   <br>
-					The final number is approximately how many calories you need on a daily basis to maintain your weight.    <br>
-					Of course, this is an estimate. According to a 2007 study    <br>
-					Trusted Source    <br>
-					, the formula would be more accurate if it included body composition, weight history, and other factors that have been shown to affect BMR.    <br>
-					  <h2> How you can change your BMR   </h2>      <br>
-					Your BMR is determined by a number of factors, including:    <br>
-					⦿ sex    <br>
-					⦿ weight    <br>
-					⦿ height    <br>
-					⦿ age    <br>
-					⦿ ethnicity    <br>
-					⦿ weight history    <br>
-					⦿ body composition    <br>
-					⦿ genetic factors    <br>
-					Of these factors, you can take steps to change your weight and body composition. So if you want to change your BMR, your first steps should be to lose weight and increase muscle.   <br>
-					A 2010 review   <br>
-					Trusted Source   <br>
-					 indicated that resistance training can improve lean body mass composition and maintain fat mass reduction, increasing BMR.   <br>
-					 <h2> Takeaway </h2>   <br>
-					Understanding your BMR, your typical activity level, and the amount of calories you need daily to maintain your weight are important ways for you to actively participate in your physical health.   <br>
-					Whether you need to gain weight, maintain your current weight, or lose weight, calculating your BMR is a good place to start.   <br>
-					</p>
+    <title>BMR Calculator</title>
+    <link rel="stylesheet" href="{% static 'css/bmr.css'%}">
+  </head>
+  <body>
+    <div>
+      <h2>BMR Calculator</h2>
+      <p class="text">Height</p>
+      <input type="text" id="h">
+      <p class="text">Weight</p>
+      <input type="text" id="w">
+      <p id="result"></p>
+      <button id="btn" onClick="BMI()">Calculate</button>
+      <p id="info">Please enter height [cm] and weight [kg]</p>
+    </div>
 
-		</div>
-		<script type="text/javascript">
-			function BMR() {
-				var h=document.getElementById('h').value;
-				var w=document.getElementById('w').value;
-				var a=document.getElementById('a').value;
-				var bmr = 66+(13.7*w) + (5*h) - (6.8*a);
-				console.log(bmr)
-				var bmio=(bmr.toFixed(2));
-				document.getElementById("result").innerHTML="Your BMR is " + bmio + " Calories/day";
-			}
-		</script>
-	</body>
+    <script type="text/javascript">
+      function BMI() {
+        var h=document.getElementById('h').value;
+        var w=document.getElementById('w').value;
+        var bmi=w/(h/100*h/100);
+        var bmio=(bmi.toFixed(2));
+        document.getElementById("result").innerHTML="Your BMI is " + bmio;
+      }
+    </script>
 
-
-</html>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>

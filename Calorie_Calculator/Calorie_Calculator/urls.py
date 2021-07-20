@@ -14,18 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from Calculators import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index'),
-    path('/measure',views.measure,name='Measure'),
-    path('/accounts',views.account,name='Account'),
-    path('/measure/bmi',views.bmi,name='BMI'),
-    path('/measure/bmr',views.bmr,name='BMR'),
-    path('/measure/bodyfat',views.bodyfat,name='bodyfat'),
-    path('/measure/calorie',views.calorie,name='calorie'),
+    path('/signup',views.register,name='register'),
+    path('/login',views.login,name='login'),
+    path('/bmi',views.bmi,name='bmi'),
+    path('/bmr',views.bmr,name='bmr'),
+    path('/fat',views.fat,name='fat'),
+    path('/calories',views.calories,name='calories'),
+    path('/logout',views.logout,name='logout'),
+    
     
 ]
