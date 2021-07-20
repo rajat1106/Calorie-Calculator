@@ -69,7 +69,7 @@ header nav ul li div a:hover{
 ------------------------- */
 
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 10% 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -98,6 +98,6 @@ header nav ul li div a:hover{
 
 @media (min-width: 62em) {
   .featurette-heading {
-    margin-top: 7rem;
+    margin-top: 3%;
   }
 }
