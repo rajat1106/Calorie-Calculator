@@ -21,13 +21,13 @@ from Calculators import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index'),
-    path('/signup',views.register,name='register'),
-    path('/login',views.login,name='login'),
-    path('/bmi',views.bmi,name='bmi'),
-    path('/bmr',views.bmr,name='bmr'),
-    path('/fat',views.fat,name='fat'),
-    path('/calories',views.calories,name='calories'),
-    path('/logout',views.logout,name='logout'),
+    path('signup',views.register,name='register'),
+    path('login',views.login,name='login'),
+    path('bmi',views.bmi,name='bmi'),
+    path('bmr',views.bmr,name='bmr'),
+    path('fat',views.fat,name='fat'),
+    path('calories',views.calories,name='calories'),
+    path('logout',views.logout,name='logout'),
     
     
 ]
